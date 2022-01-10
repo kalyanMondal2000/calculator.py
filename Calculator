@@ -1,18 +1,36 @@
-def add(a,b,):
+def add(a,b):
     return a+b
-def subtract(a,b,):
+def subtract(a,b):
     return a-b
-def multiply(a,b,):
+def multiply(a,b):
     return a*b
-def divide(a,b,):
+def divide(a,b):
     return a/b
-
+def evenOrOdd(a):
+    if a%2 == 0 :
+        return "even"
+    else :
+        return "odd"
+def fractionToPercent(a,b):
+    fraction = a/b
+    return fraction * 100
+def decimalToPercent(a):
+    return a*100
+def PercentToDecimal(a):
+    if a>100 :
+        return("an invalid amount")
+    else : 
+        return a/100
+def fractionToDecimal(a,b):
+    return a/b
 print("Welcome to the calculator!")
-choice = input("What do you want to calculate?\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Exponents")
+choice = input("What do you want to calculate?\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Exponents\n6.Even or odd\n7.Fraction to percent\n8.Decimal to percent\n9.Percent to decimal\n10.Fraction to decimal")
 
-if choice in ('1', '2', '3', '4', '5'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+if choice in ('1', '2', '3', '4', '5','7','10'):
+        num1 = float(input("Enter first(numerator) number: "))
+        num2 = float(input("Enter second number(denominator): "))
+elif choice in ('6','8','9'):
+    num1 = float(input("Enter number: "))
 
 if choice == "1":
     print(num1, "+", num2, "=", add(num1,num2))
@@ -28,3 +46,18 @@ if choice == "4":
 
 if choice == "5":
     print(num1, "^", num2, "=", pow(num1, num2))
+
+if choice == "6":
+    print(num1, " is ", evenOrOdd(num1))
+
+if choice == "7":
+    print(num1, "/", num2, "=", fractionToPercent(num1,num2),"%")
+
+if choice == "8":
+    print(num1, " is ", decimalToPercent(num1), "%")
+
+if choice == "9":
+    print(num1, "% is ", PercentToDecimal(num1))
+
+if choice == "10":
+    print(num1, "/", num2, "=", fractionToDecimal(num1,num2))
